@@ -88,7 +88,7 @@ public class Game extends BaseGameActivity{
         initMusicPlayer();
         loadCoins();
         if(gameOverCounter % GAMES_PER_AD == 0) {
-            setupAd();
+           // setupAd();
         }
     }
     
@@ -249,8 +249,9 @@ public class Game extends BaseGameActivity{
                     Toast.makeText(game, msg.arg1, Toast.LENGTH_SHORT).show();
                     break;
                 case SHOW_AD:
-                    showAd();
+                    //showAd();
                     break;
+                default:break;
             }
         }
         
@@ -283,6 +284,8 @@ public class Game extends BaseGameActivity{
     
     private void setupAd() {
         MobileAds.initialize(this, getResources().getString(R.string.ad_app_id));
+
+
 
         interstitial = new InterstitialAd(this);
         interstitial.setAdUnitId(getResources().getString(R.string.ad_unit_id));
